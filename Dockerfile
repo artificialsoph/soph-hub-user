@@ -23,3 +23,8 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+
+COPY . /srv/app/src
+USER root
+RUN chown -R ${NB_UID} /srv/app/src
+USER ${NB_USER}
