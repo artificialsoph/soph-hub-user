@@ -19,12 +19,8 @@ RUN jupyter nbextension enable execute_time/ExecuteTime
 RUN jupyter nbextension enable toggle_all_line_numbers/main
 
 # Make sure the contents of our repo are in ${HOME}
-COPY . ${HOME}
-USER root
-RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
 
-COPY . /srv/app/src
 USER root
-RUN chown -R ${NB_UID} /srv/app/src
+COPY --chown ${NB_UID} . /srv/app/src
+COPY --chown ${NB_UID} . ${HOME}
 USER ${NB_USER}
