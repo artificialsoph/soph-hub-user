@@ -21,6 +21,9 @@ RUN jupyter nbextension enable toggle_all_line_numbers/main
 # Make sure the contents of our repo are in ${HOME}
 
 USER root
-COPY --chown ${NB_UID} . /srv/app/src
-COPY --chown ${NB_UID} . ${HOME}
+COPY . /srv/app/src
+COPY . ${HOME}
+RUN chown -R ${NB_UID} /srv/app/src
+RUN chown -R ${NB_UID} ${HOME}
+
 USER ${NB_USER}
