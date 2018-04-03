@@ -1,4 +1,4 @@
-FROM jupyter/tensorflow-notebook
+FROM jupyter/tensorflow-notebook:8d9388cac562
 
 LABEL maintainer="Sophie Searcy <s@soph.info>"
 
