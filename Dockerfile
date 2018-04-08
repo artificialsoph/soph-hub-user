@@ -3,7 +3,7 @@ FROM jupyter/tensorflow-notebook:8d9388cac562
 LABEL maintainer="Sophie Searcy <s@soph.info>"
 
 RUN pip install pip -U --no-cache-dir
-RUN pip install gensim nltk yapf autopep8 ipywidgets jupyter_contrib_nbextensions -U --no-cache-dir
+RUN pip install gensim nltk yapf autopep8 ipywidgets jupyter_contrib_nbextensions pyemd -U --no-cache-dir
 RUN pip install git+https://github.com/data-8/gitautosync -U
 
 RUN jupyter contrib nbextension install --user
